@@ -1,6 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Asks the user how many cars they want to enter, gathers the details for each
+ * car and prints the car inventory.
+ * 
+ * @author Yasmin
+ *
+ */
 public class CarApp {
 
 	public static void main(String[] args) {
@@ -8,6 +15,7 @@ public class CarApp {
 		System.out.println("Welcome to the Grand Circus Motors admin console!");
 		System.out.println();
 
+		// Get number of cars
 		ArrayList<Car> cars = new ArrayList<>();
 		int numOfCars = Validator.getInt(scan, "How many cars are you entering: ", 1, Integer.MAX_VALUE);
 
@@ -27,5 +35,9 @@ public class CarApp {
 		for (Car c : cars) {
 			System.out.printf("%-10s %-10s %-10d $%,10.2f\n", c.getMake(), c.getModel(), c.getYear(), c.getPrice());
 		}
+		scan.close();
+
+		System.out.println();
+		System.out.println("Goodbye!");
 	}
 }
